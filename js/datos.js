@@ -1,11 +1,32 @@
-var formulario = document.getElementById('frmAlumno');
+const app = new Vue({
+   
+    el:'#app',
+    data:{
+        titulo:'Registrar un nuevo estudiante utilizando Vue',
+        idAlumno:'',
+        nombre:''   
+    },
 
-formulario.addEventListener('submit', function(e){
-    e.preventDefault();
-    console.log('Diste un click');
+    methods:{
+        mostrarDatos: function () {
+            console.log(this.nombre);
+        }
+    }
 
-    var  datos = new FormData(formulario);
-    console.log(datos.get('idAlumno'));
-    console.log(datos.get('fecha'));
-    console.log(datos.get('ausente'));
 })
+
+// var formulario = document.getElementById('frmAlumno');
+
+// formulario.addEventListener('submit', function(e){
+//     e.preventDefault();
+//     var  datos = new FormData(formulario);
+    
+//     fetch('controller/studentController.php',{
+//         method:'POST',
+//         body:datos
+//     })
+//     .then(res => res.json())
+//     .then(data => {
+//         console.log(data);
+//     })
+// })
